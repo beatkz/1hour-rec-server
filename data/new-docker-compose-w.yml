@@ -1,76 +1,101 @@
 services:
-    mirakurun:
-        container_name: mirakurun
-        build:
-          context: Mirakurun
-          dockerfile: docker/Dockerfile
-        image: chinachu/mirakurun
-        cap_add:
-            - SYS_ADMIN
-            - SYS_NICE
-        ports:
-            - "40772:40772"
-            - "9229:9229"
-        volumes:
-            - /etc/localtime:/etc/localtime:ro
-            - ./Mirakurun/config/:/app-config/
-            - ./Mirakurun/data/:/app-data/
-        environment:
-            TZ: "Asia/Tokyo"
-        devices:
-            - /dev/px4video0:/dev/px4video0
-            - /dev/px4video1:/dev/px4video1
-            - /dev/px4video2:/dev/px4video2
-            - /dev/px4video3:/dev/px4video3
-            - /dev/bus:/dev/bus
-        restart: always
-        logging:
-            driver: json-file
-            options:
-                max-file: "1"
-                max-size: 10m
+  mirakc:
+    image: mirakc/mirakc:alpine
+    container_name: mirakc
+    init: true
+    restart: unless-stopped
+    devices:
+      # チューナーコマンドで利用するデバイスファイルを列挙
+      - /dev/px4video0
+      - /dev/px4video1
+      - /dev/px4video2
+      - /dev/px4video3
+    ports:
+      - 40772:40772
+    volumes:
+      - mirakc-epg:/var/lib/mirakc/epg
+      - ./mirakc/config.yml:/etc/mirakc/config.yml:ro
+    environment:
+      TZ: Asia/Tokyo
+      RUST_LOG: info
+  b25:
+    build: ./mirakc/b25
+    container_name: b25
+    depends_on:
+      - bcas
+    init: true
+    restart: unless-stopped
+    ports:
+      - 40773:40773
+    environment:
+      BCAS_SERVER: bcas:40774
+      TZ: Asia/Tokyo
+  bcas:
+    build: ./mirakc/bcas
+    container_name: bcas
+    init: true
+    restart: unless-stopped
+    devices:
+      # ICカードリーダーを追加
+      - /dev/bus/usb
+    ports:
+      - 40774:40774
+    environment:
+      TZ: Asia/Tokyo
 
-    mysql:
-        container_name: mysql-epgstation-v2
-        image: mariadb:10.5
-        volumes:
-            - mysql-db:/var/lib/mysql
-        environment:
-            MYSQL_USER: epgstation
-            MYSQL_PASSWORD: epgstation
-            MYSQL_ROOT_PASSWORD: epgstation
-            MYSQL_DATABASE: epgstation
-            TZ: "Asia/Tokyo"
-        command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci --performance-schema=false --expire_logs_days=1 # for mariadb
-        restart: always
-        logging:
-            options:
-                max-size: "10m"
-                max-file: "3"
+  mysql:
+    image: mariadb:10.5
+    # image: mysql:8.0 # 囲み文字を使用する場合
+    volumes:
+      - mysql-db:/var/lib/mysql
+    environment:
+      MYSQL_USER: epgstation
+      MYSQL_PASSWORD: epgstation
+      MYSQL_ROOT_PASSWORD: epgstation
+      MYSQL_DATABASE: epgstation
+      TZ: "Asia/Tokyo"
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci --performance-schema=false --expire_logs_days=1 # for mariadb
+    # command: --character-set-server=utf8mb4 --collation-server=utf8mb4_0900_as_ci --performance-schema=false --expire_logs_days=1 --default-authentication-plugin=mysql_native_password # for myql
+    restart: always
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "3"
 
-    epgstation:
-        container_name: epgstation-v2
-        build:
-            context: "./epgstation"
-            dockerfile: "debian.Dockerfile"
-        volumes:
-            - /etc/localtime:/etc/localtime:ro
-            - ./epgstation/config:/app/config
-            - ./epgstation/data:/app/data
-            - ./epgstation/thumbnail:/app/thumbnail
-            - ./epgstation/logs:/app/logs
-            - /media/tv_record:/app/recorded
-        environment:
-            TZ: "Asia/Tokyo"
-        depends_on:
-            - mirakurun
-            - mysql
-        ports:
-            - "8888:8888"
-            - "8889:8889"
-        #user: "1000:1000"
-        restart: always
+  epgstation:
+      build:
+        context: "./epgstation"
+        dockerfile: "debian.Dockerfile"
+      volumes:
+        - ./epgstation/config:/app/config
+        - ./epgstation/data:/app/data
+        - /var/tmp:/app/data/streamfiles
+        # - /var/tmp:/app/data/upload
+        - ./epgstation/thumbnail:/app/thumbnail
+        - ./epgstation/logs:/app/logs
+        - ./recorded:/app/recorded
+        - ./join_logo_scp_trial/JL:/join_logo_scp_trial/JL
+        - ./join_logo_scp_trial/logo:/join_logo_scp_trial/logo
+        - ./join_logo_scp_trial/result:/join_logo_scp_trial/result
+        - ./join_logo_scp_trial/setting:/join_logo_scp_trial/setting
+        - ./join_logo_scp_trial/src:/join_logo_scp_trial/src 
+      environment:
+        TZ: "Asia/Tokyo"
+        LIBVA_DRIVER_NAME: "iHD"
+      depends_on:
+        - mirakc
+        - mysql
+      ports:
+        - "8888:8888"
+        - "8889:8889"
+      # user: "1000:1000"
+      devices:
+        - /dev/dri:/dev/dri
+      restart: always
 
 volumes:
-    mysql-db:
-        driver: local
+  mirakc-epg:
+    name: mirakc_epg
+    driver: local
+  mysql-db:
+    driver: local
