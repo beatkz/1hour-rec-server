@@ -60,7 +60,7 @@ services:
             - ./epgstation/data:/app/data
             - ./epgstation/thumbnail:/app/thumbnail
             - ./epgstation/logs:/app/logs
-            - /media/tv_record:/app/recorded
+            - ./recorded:/app/recorded
         environment:
             TZ: "Asia/Tokyo"
         depends_on:
@@ -69,7 +69,7 @@ services:
         ports:
             - "8888:8888"
             - "8889:8889"
-        #user: "1000:1000"
+        user: "1000:1000"
         restart: always
 
 volumes:

@@ -21,7 +21,13 @@
   channel: '21'
 - name: TOKYO MX
   type: GR
-  channel: '20'
+  channel: '16'
+- name: tvk
+  type: GR
+  channel: '18'
+- name: テレ玉
+  type: GR
+  channel: '32'
 - name: NHK BS1
   type: BS
   channel: BS15_0

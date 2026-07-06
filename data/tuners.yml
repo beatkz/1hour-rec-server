@@ -2,7 +2,7 @@
   types:
     - BS
     - CS
-  command: recpt1 --device /dev/px4video0 <channel> - -
+  command: recpt1 --device /dev/px4video0 --lnb 15 <channel> - -
   decoder: arib-b25-stream-test
   isDisabled: false
 
@@ -10,7 +10,7 @@
   types:
     - BS
     - CS
-  command: recpt1 --device /dev/px4video1 <channel> - -
+  command: recpt1 --device /dev/px4video1 --lnb 15 <channel> - -
   decoder: arib-b25-stream-test
   isDisabled: false
 
@@ -32,7 +32,7 @@
   types:
     - BS
     - CS
-  command: recpt1 --device /dev/px4video4 <channel> - -
+  command: recpt1 --device /dev/px4video4 --lnb 15 <channel> - -
   decoder: arib-b25-stream-test
   isDisabled: false
 
@@ -40,7 +40,7 @@
   types:
     - BS
     - CS
-  command: recpt1 --device /dev/px4video5 <channel> - -
+  command: recpt1 --device /dev/px4video5 --lnb 15 <channel> - -
   decoder: arib-b25-stream-test
   isDisabled: false
 
