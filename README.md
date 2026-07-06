@@ -8,6 +8,8 @@
 
 ```bash
 cd ~/git/docker-mirakurun-epgstation
+docker compose down
 mv recorded recorded.org
 ln -s /mnt/path-to/recorded recorded
+docker compose up -d
 ```
