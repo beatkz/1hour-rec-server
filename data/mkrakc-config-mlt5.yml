@@ -1,0 +1,41 @@
+epg:
+  cache-dir: /var/lib/mirakc/epg
+
+server:
+  addrs:
+    - http: '0.0.0.0:40772'
+  mounts:
+    /miraview:
+      path: /var/www/miraview
+      index: index.html
+
+tuners:
+  - name: PX_MLT1
+    types: [GR, BS, CS]
+    command: recpt1 --device /dev/pxmlt5video0 --lnb 15 {{{channel}}} - -
+
+  - name: PX_MLT2
+    types: [GR, BS, CS]
+    command: recpt1 --device /dev/pxmlt5video1 --lnb 15 {{{channel}}} - -
+
+  - name: PX_MLT3
+    types: [GR, BS, CS]
+    command: recpt1 --device /dev/pxmlt5video2 --lnb 15 {{{channel}}} - -
+
+  - name: PX_MLT4
+    types: [GR, BS, CS]
+    command: recpt1 --device /dev/pxmlt5video3 --lnb 15 {{{channel}}} - -
+    
+  - name: PX_MLT5
+    types: [GR, BS, CS]
+    command: recpt1 --device /dev/pxmlt5video4 --lnb 15 {{{channel}}} - -
+
+filters:
+  # Chinachu/Mirakurunの設定例より
+  #
+  # tsukumijima/libaribb25を使用する場合は，`arib-b25-stream-test -v 0`とログを
+  # 制限する必要があります．これはSTDERRへの出力で`\r`が使用されており，これが原
+  # 因でログのライン分割処理で問題が発生するためです．
+  decode-filter:
+    command: >-
+      arib-b25-stream-test

@@ -19,13 +19,11 @@ tuners:
     command: recpt1 --lnb 15 --device /dev/px4video1 {{{channel}}} - -
 
   - name: PX_T1
-    types:
-      - GR
+    types: [GR]
     command: recpt1 --device /dev/px4video2 {{{channel}}} - -
 
   - name: PX_T2
-    types:
-      - GR
+    types: [GR]
     command: recpt1 --device /dev/px4video3 {{{channel}}} - -
 filters:
   # Chinachu/Mirakurunの設定例より

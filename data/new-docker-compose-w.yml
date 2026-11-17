@@ -62,14 +62,22 @@ services:
             - ./epgstation/thumbnail:/app/thumbnail
             - ./epgstation/logs:/app/logs
             - ./recorded:/app/recorded
+            - ./join_logo_scp_trial/JL:/join_logo_scp_trial/JL
+            - ./join_logo_scp_trial/logo:/join_logo_scp_trial/logo
+            - ./join_logo_scp_trial/result:/join_logo_scp_trial/result
+            - ./join_logo_scp_trial/setting:/join_logo_scp_trial/setting
+            - ./join_logo_scp_trial/src:/join_logo_scp_trial/src 
         environment:
             TZ: "Asia/Tokyo"
+            LIBVA_DRIVER_NAME: "iHD"
         depends_on:
             - mirakc
             - mysql
         ports:
             - "8888:8888"
             - "8889:8889"
+        devices:
+            - /dev/dri:/dev/dri
         user: "1000:1000"
         restart: always
 
