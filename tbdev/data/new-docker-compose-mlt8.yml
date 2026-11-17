@@ -35,8 +35,8 @@ services:
                 max-size: 10m
 
     mysql:
-        container_name: mysql-epgstation-v2
-        image: mariadb:10.5
+        container_name: mysql-epgstation-v3
+        image: mariadb:12.3
         volumes:
             - mysql-db:/var/lib/mysql
         environment:
@@ -45,7 +45,7 @@ services:
             MYSQL_ROOT_PASSWORD: epgstation
             MYSQL_DATABASE: epgstation
             TZ: "Asia/Tokyo"
-        command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci --performance-schema=false --expire_logs_days=1 # for mariadb
+        command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci --performance-schema=false --binlog_expire_logs_seconds=86400 # for mariadb
         restart: always
         logging:
             options:
@@ -63,7 +63,7 @@ services:
             - ./epgstation/data:/app/data
             - ./epgstation/thumbnail:/app/thumbnail
             - ./epgstation/logs:/app/logs
-            - /media/tv_record:/app/recorded
+            - ./recorded:/app/recorded
         environment:
             TZ: "Asia/Tokyo"
         depends_on:
@@ -72,7 +72,7 @@ services:
         ports:
             - "8888:8888"
             - "8889:8889"
-        #user: "1000:1000"
+        user: "1000:1000"
         restart: always
 
 volumes:

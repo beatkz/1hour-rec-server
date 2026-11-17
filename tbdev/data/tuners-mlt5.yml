@@ -3,7 +3,7 @@
     - GR
     - BS
     - CS
-  command: recpt1 --device /dev/pxmlt5video0 <channel> - -
+  command: recpt1 --device /dev/pxmlt5video0 --lnb 15 <channel> - -
   decoder: arib-b25-stream-test
   isDisabled: false
 
@@ -12,7 +12,7 @@
     - GR
     - BS
     - CS
-  command: recpt1 --device /dev/pxmlt5video1 <channel> - -
+  command: recpt1 --device /dev/pxmlt5video1 --lnb 15 <channel> - -
   decoder: arib-b25-stream-test
   isDisabled: false
   
@@ -21,7 +21,7 @@
     - GR
     - BS
     - CS
-  command: recpt1 --device /dev/pxmlt5video2 <channel> - -
+  command: recpt1 --device /dev/pxmlt5video2 --lnb 15 <channel> - -
   decoder: arib-b25-stream-test
   isDisabled: false
 
@@ -30,7 +30,7 @@
     - GR
     - BS
     - CS
-  command: recpt1 --device /dev/pxmlt5video3 <channel> - -
+  command: recpt1 --device /dev/pxmlt5video3 --lnb 15 <channel> - -
   decoder: arib-b25-stream-test
   isDisabled: false
   
@@ -39,6 +39,6 @@
     - GR
     - BS
     - CS
-  command: recpt1 --device /dev/pxmlt5video4 <channel> - -
+  command: recpt1 --device /dev/pxmlt5video4 --lnb 15 <channel> - -
   decoder: arib-b25-stream-test
   isDisabled: false

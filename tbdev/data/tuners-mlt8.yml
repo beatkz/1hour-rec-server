@@ -3,7 +3,7 @@
     - GR
     - BS
     - CS
-  command: recpt1 --device /dev/pxmlt8video0 <channel> - -
+  command: recpt1 --device /dev/pxmlt8video0 --lnb 15 <channel> - -
   decoder: arib-b25-stream-test
   isDisabled: false
 
@@ -12,7 +12,7 @@
     - GR
     - BS
     - CS
-  command: recpt1 --device /dev/pxmlt8video1 <channel> - -
+  command: recpt1 --device /dev/pxmlt8video1 --lnb 15 <channel> - -
   decoder: arib-b25-stream-test
   isDisabled: false
   
@@ -21,7 +21,7 @@
     - GR
     - BS
     - CS
-  command: recpt1 --device /dev/pxmlt8video2 <channel> - -
+  command: recpt1 --device /dev/pxmlt8video2 --lnb 15 <channel> - -
   decoder: arib-b25-stream-test
   isDisabled: false
 
@@ -30,7 +30,7 @@
     - GR
     - BS
     - CS
-  command: recpt1 --device /dev/pxmlt8video3 <channel> - -
+  command: recpt1 --device /dev/pxmlt8video3 --lnb 15 <channel> - -
   decoder: arib-b25-stream-test
   isDisabled: false
   
@@ -39,7 +39,7 @@
     - GR
     - BS
     - CS
-  command: recpt1 --device /dev/pxmlt8video4 <channel> - -
+  command: recpt1 --device /dev/pxmlt8video4 --lnb 15 <channel> - -
   decoder: arib-b25-stream-test
   isDisabled: false
 
@@ -48,7 +48,7 @@
     - GR
     - BS
     - CS
-  command: recpt1 --device /dev/pxmlt8video5 <channel> - -
+  command: recpt1 --device /dev/pxmlt8video5 --lnb 15 <channel> - -
   decoder: arib-b25-stream-test
   isDisabled: false
   
@@ -57,7 +57,7 @@
     - GR
     - BS
     - CS
-  command: recpt1 --device /dev/pxmlt8video6 <channel> - -
+  command: recpt1 --device /dev/pxmlt8video6 --lnb 15 <channel> - -
   decoder: arib-b25-stream-test
   isDisabled: false
 
@@ -66,6 +66,6 @@
     - GR
     - BS
     - CS
-  command: recpt1 --device /dev/pxmlt8video7 <channel> - -
+  command: recpt1 --device /dev/pxmlt8video7 --lnb 15 <channel> - -
   decoder: arib-b25-stream-test
   isDisabled: false
