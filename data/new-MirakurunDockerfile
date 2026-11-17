@@ -1,5 +1,5 @@
 ARG ARCH=
-FROM ${ARCH}node:18.15.0-bullseye AS build
+FROM ${ARCH}node:18-bookworm AS build
 WORKDIR /app
 ENV DOCKER=YES NODE_ENV=production
 ADD . .
@@ -10,7 +10,7 @@ RUN apt-get update && \
     npm run build && \
     npm install -g --unsafe-perm --production mirakurun@3.9.0-rc.4
 
-FROM ${ARCH}node:18.15.0-bullseye-slim
+FROM ${ARCH}node:18-bookworm-slim
 WORKDIR /app
 
 ENV DEV="build-essential libtool autoconf git automake cmake"
