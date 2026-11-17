@@ -1,3 +1,4 @@
+# 関東圏の地上波チャンネル(TOKYO MX以外の独立局は手動でオンにする)
 - name: NHK総合・東京
   type: GR
   channel: '27'
@@ -13,10 +14,10 @@
 - name: TBS
   type: GR
   channel: '22'
-- name: テレビ東京
+- name: テレ東
   type: GR
   channel: '23'
-- name: フジテレビジョン
+- name: フジテレビ
   type: GR
   channel: '21'
 - name: TOKYO MX
@@ -25,112 +26,234 @@
 - name: tvk
   type: GR
   channel: '18'
+  isDisabled: true
+- name: ぐんテレ
+  type: GR
+  channel: '19'
+  isDisabled: true
+- name: とちテレ
+  type: GR
+  channel: '29'
+  isDisabled: true
+- name: チバテレ
+  type: GR
+  channel: '30'
+  isDisabled: true
 - name: テレ玉
   type: GR
   channel: '32'
-- name: NHK BS1
-  type: BS
-  channel: BS15_0
-  serviceId: 101
-- name: NHK BS1 (サブ)
-  type: BS
-  channel: BS15_0
-  serviceId: 102
-- name: BS日テレ
-  type: BS
-  channel: BS13_0
-  serviceId: 141
-- name: BS日テレ (サブ)
-  type: BS
-  channel: BS13_0
-  serviceId: 142
-- name: BS朝日
+  isDisabled: true
+
+# BSチャンネル(基本プラン以外の契約済みの有料チャンネルは手動でオンにする)
+- name: BS朝日1
   type: BS
   channel: BS01_0
   serviceId: 151
-- name: BS朝日 (サブ)
+  isDisabled: false
+- name: BS朝日2
   type: BS
   channel: BS01_0
   serviceId: 152
+  isDisabled: false
+- name: BS朝日3
+  type: BS
+  channel: BS01_0
+  serviceId: 153
+  isDisabled: false
 - name: BS-TBS
   type: BS
   channel: BS01_1
   serviceId: 161
+  isDisabled: false
+- name: BS-TBS
+  type: BS
+  channel: BS01_1
+  serviceId: 162
+  isDisabled: false
+- name: BS-TBS
+  type: BS
+  channel: BS01_1
+  serviceId: 163
+  isDisabled: false
 - name: BSテレ東
   type: BS
-  channel: BS1_2
+  channel: BS01_2
   serviceId: 171
-- name: BSフジ
+  isDisabled: false
+- name: BSテレ東2
   type: BS
-  channel: BS13_1
-  serviceId: 181
+  channel: BS01_2
+  serviceId: 172
+  isDisabled: false
+- name: BSテレ東3
+  type: BS
+  channel: BS01_2
+  serviceId: 173
+  isDisabled: false
+- name: BS朝日1
+  type: BS
+  channel: BS01_3
+  serviceId: 151
+  isDisabled: false
+- name: BS朝日2
+  type: BS
+  channel: BS01_3
+  serviceId: 152
+  isDisabled: false
+- name: BS朝日3
+  type: BS
+  channel: BS01_3
+  serviceId: 153
+  isDisabled: false
 - name: WOWOWプライム
   type: BS
   channel: BS03_0
   serviceId: 191
+  isDisabled: true
+- name: BSアニマックス
+  type: BS
+  channel: BS03_1
+  serviceId: 236
   isDisabled: false
+- name: BS釣りビジョン
+  type: BS
+  channel: BS03_2
+  serviceId: 251
+  isDisabled: false
+- name: WOWOWプライム
+  type: BS
+  channel: BS03_3
+  serviceId: 191
+  isDisabled: true
 - name: WOWOWライブ
   type: BS
   channel: BS05_0
   serviceId: 192
-  isDisabled: false
+  isDisabled: true
 - name: WOWOWシネマ
   type: BS
   channel: BS05_1
   serviceId: 193
+  isDisabled: true
+- name: WOWOWライブ
+  type: BS
+  channel: BS05_2
+  serviceId: 192
+  isDisabled: true
+- name: WOWOWライブ
+  type: BS
+  channel: BS05_3
+  serviceId: 192
+  isDisabled: true
+- name: BS11イレブン
+  type: BS
+  channel: BS09_0
+  serviceId: 211
   isDisabled: false
+- name: BS12トゥエルビ
+  type: BS
+  channel: BS09_1
+  serviceId: 222
+  isDisabled: false
+- name: BS11イレブン
+  type: BS
+  channel: BS09_2
+  serviceId: 211
+  isDisabled: false
+- name: BS11イレブン
+  type: BS
+  channel: BS09_3
+  serviceId: 211
+  isDisabled: false
+- name: BS日テレ
+  type: BS
+  channel: BS13_0
+  serviceId: 141
+  isDisabled: false
+- name: BS日テレ
+  type: BS
+  channel: BS13_0
+  serviceId: 142
+  isDisabled: false
+- name: BS日テレ
+  type: BS
+  channel: BS13_0
+  serviceId: 143
+  isDisabled: false
+- name: BSフジ・181
+  type: BS
+  channel: BS13_1
+  serviceId: 181
+  isDisabled: false
+- name: BSフジ・182
+  type: BS
+  channel: BS13_1
+  serviceId: 182
+  isDisabled: false
+- name: BSフジ・183
+  type: BS
+  channel: BS13_1
+  serviceId: 183
+  isDisabled: false
+- name: 放送大学テレビ
+  type: BS
+  channel: BS13_2
+  serviceId: 231
+  isDisabled: false
+- name: 放送大学テレビ
+  type: BS
+  channel: BS13_2
+  serviceId: 232
+  isDisabled: false
+- name: BS日テレ
+  type: BS
+  channel: BS13_3
+  serviceId: 141
+  isDisabled: false
+- name: BS日テレ
+  type: BS
+  channel: BS13_3
+  serviceId: 142
+  isDisabled: false
+- name: BS日テレ
+  type: BS
+  channel: BS13_3
+  serviceId: 143
+  isDisabled: false
+- name: NHK BS
+  type: BS
+  channel: BS15_0
+  serviceId: 101
+  isDisabled: false
+- name: NHK BS
+  type: BS
+  channel: BS15_0
+  serviceId: 102
+  isDisabled: false
+- name: BS10プレミアム
+  type: BS
+  channel: BS15_1
+  serviceId: 201
+  isDisabled: true
 - name: BS10
   type: BS
   channel: BS15_2
   serviceId: 200
   isDisabled: false
-- name: BS10スター・チャンネル
+- name: NHK BS
   type: BS
-  channel: BS15_1
-  serviceId: 201
+  channel: BS15_3
+  serviceId: 101
   isDisabled: false
-- name: BS11
+- name: NHK BS
   type: BS
-  channel: BS09_0
-  serviceId: 211
-- name: BS12トゥエルビ
-  type: BS
-  channel: BS09_1
-  serviceId: 222
-- name: 放送大学BS1
-  type: BS
-  channel: BS11_2
-  serviceId: 231
-  isDisabled: true
-- name: 放送大学BS2
-  type: BS
-  channel: BS11_2
-  serviceId: 232
-  isDisabled: true
-- name: 放送大学BS3
-  type: BS
-  channel: BS11_2
-  serviceId: 233
-  isDisabled: true
-- name: グリーンチャンネル
+  channel: BS15_3
+  serviceId: 102
+  isDisabled: false
+- name: J SPORTS 4
   type: BS
   channel: BS19_0
-  serviceId: 234
-  isDisabled: true
-- name: BSアニマックス
-  type: BS
-  channel: BS13_2
-  serviceId: 236
-  isDisabled: true
-- name: FOXスポーツ＆エンターテイメント
-  type: BS
-  channel: BS11_0
-  serviceId: 238
-  isDisabled: true
-- name: BSスカパー!
-  type: BS
-  channel: BS11_1
-  serviceId: 241
+  serviceId: 245
   isDisabled: true
 - name: J SPORTS 1
   type: BS
@@ -144,304 +267,318 @@
   isDisabled: true
 - name: J SPORTS 3
   type: BS
-  channel: BS21_1
+  channel: BS19_3
   serviceId: 244
   isDisabled: true
-- name: J SPORTS 4
-  type: BS
-  channel: BS21_2
-  serviceId: 245
-  isDisabled: true
-- name: BS釣りビジョン
-  type: BS
-  channel: BS23_0
-  serviceId: 251
-  isDisabled: true
-- name: イマジカBS・映画
+- name: WOWOWプラス
   type: BS
   channel: BS21_0
   serviceId: 252
   isDisabled: true
+- name: 日本映画専門ch
+  type: BS
+  channel: BS21_1
+  serviceId: 255
+  isDisabled: false
+- name: グリーンチャンネル
+  type: BS
+  channel: BS21_2
+  serviceId: 234
+  isDisabled: true
+- name: WOWOWプラス
+  type: BS
+  channel: BS21_3
+  serviceId: 252
+  isDisabled: true
+- name: ディズニーch
+  type: BS
+  channel: BS23_0
+  serviceId: 256
+  isDisabled: false
 - name: BSよしもと
   type: BS
   channel: BS23_1
   serviceId: 265
-- name: ディズニー・チャンネル
-  type: BS
-  channel: BS3_2
-  serviceId: 256
-  isDisabled: true
-- name: BS松竹東急
+  isDisabled: false
+- name: J:COM BS
   type: BS
   channel: BS23_2
   serviceId: 260
-- name: ショップチャンネル
-  type: CS
-  channel: CS8
-  serviceId: 55
-  isDisabled: true
-- name: スカパー！プロモ
-  type: CS
-  channel: CS4
-  serviceId: 100
-  isDisabled: true
-- name: QVC
-  type: CS
-  channel: CS22
-  serviceId: 161
-  isDisabled: true
-- name: 東映チャンネル
-  type: CS
-  channel: CS8
-  serviceId: 218
-  isDisabled: true
-- name: 衛星劇場
-  type: CS
-  channel: CS8
-  serviceId: 219
-  isDisabled: true
-- name: チャンネルNECO
-  type: CS
-  channel: CS4
-  serviceId: 223
-  isDisabled: true
-- name: ザ・シネマ
-  type: CS
-  channel: CS4
-  serviceId: 227
-  isDisabled: true
-- name: ムービープラスHD
-  type: CS
-  channel: CS18
-  serviceId: 240
-  isDisabled: true
-- name: スカイA
-  type: CS
-  channel: CS4
-  serviceId: 250
-  isDisabled: true
-- name: GAORA
-  type: CS
-  channel: CS12
-  serviceId: 254
-  isDisabled: true
-- name: 日テレG+
-  type: CS
-  channel: CS24
-  serviceId: 257
-  isDisabled: true
-- name: ゴルフネット
-  type: CS
-  channel: CS18
-  serviceId: 262
-  isDisabled: true
-- name: SKY STAGE
-  type: CS
-  channel: CS16
-  serviceId: 290
-  isDisabled: true
-- name: 時代劇専門ch
-  type: CS
-  channel: CS14
-  serviceId: 292
-  isDisabled: true
-- name: ファミリー劇場
-  type: CS
-  channel: CS14
-  serviceId: 293
-  isDisabled: true
-- name: ホームドラマCH
-  type: CS
-  channel: CS6
-  serviceId: 294
-  isDisabled: true
-- name: MONDO TV
-  type: CS
-  channel: CS24
-  serviceId: 295
-  isDisabled: true
+  isDisabled: false
+- name: ディズニーch
+  type: BS
+  channel: BS23_3
+  serviceId: 256
+  isDisabled: false
+
+# CSチャンネル(基本プラン以外の契約済みの有料チャンネルは手動でオンにする)
 - name: TBSチャンネル1
   type: CS
   channel: CS2
   serviceId: 296
-  isDisabled: true
-- name: TBSチャンネル2
-  type: CS
-  channel: CS22
-  serviceId: 297
-  isDisabled: true
+  isDisabled: false
 - name: テレ朝チャンネル1
   type: CS
   channel: CS2
   serviceId: 298
-  isDisabled: true
+  isDisabled: false
 - name: テレ朝チャンネル2
   type: CS
   channel: CS2
   serviceId: 299
-  isDisabled: true
-- name: 日テレプラス
+  isDisabled: false
+- name: ディズニージュニア
   type: CS
-  channel: CS24
-  serviceId: 300
-  isDisabled: true
-- name: チャンネル銀河
+  channel: CS2
+  serviceId: 339
+  isDisabled: false
+- name: スカイA
   type: CS
-  channel: CS16
-  serviceId: 305
-  isDisabled: true
-- name: フジテレビONE
+  channel: CS4
+  serviceId: 250
+  isDisabled: false
+- name: 時代劇専門ch
   type: CS
-  channel: CS20
-  serviceId: 307
-  isDisabled: true
-- name: フジテレビTWO
+  channel: CS4
+  serviceId: 292
+  isDisabled: false
+- name: メ～テレNEXT
   type: CS
-  channel: CS20
-  serviceId: 308
-  isDisabled: true
-- name: フジテレビNEXT
-  type: CS
-  channel: CS20
-  serviceId: 309
-  isDisabled: true
-- name: スーパー！ドラマTV
-  type: CS
-  channel: CS14
-  serviceId: 310
-  isDisabled: true
-- name: AXN 海外ドラマ
-  type: CS
-  channel: CS16
-  serviceId: 311
-  isDisabled: true
-- name: FOX
-  type: CS
-  channel: CS22
-  serviceId: 312
-  isDisabled: true
-- name: 女性ch／LaLa
-  type: CS
-  channel: CS18
-  serviceId: 314
-  isDisabled: true
-- name: AXNミステリー
-  type: CS
-  channel: CS24
-  serviceId: 316
-  isDisabled: true
-- name: スペシャプラス
-  type: CS
-  channel: CS24
-  serviceId: 321
-  isDisabled: true
-- name: スペースシャワーTV
-  type: CS
-  channel: CS22
-  serviceId: 322
-  isDisabled: true
+  channel: CS4
+  serviceId: 301
+  isDisabled: false
 - name: MTV
   type: CS
-  channel: CS6
+  channel: CS4
   serviceId: 323
-  isDisabled: true
-- name: エムオン！
+  isDisabled: false
+- name: ホームドラマCH
   type: CS
-  channel: CS12
-  serviceId: 325
-  isDisabled: true
+  channel: CS6
+  serviceId: 294
+  isDisabled: false
 - name: ミュージック・エア
   type: CS
-  channel: CS8
-  serviceId: 326
-  isDisabled: true
+  channel: CS6
+  serviceId: 324
+  isDisabled: false
 - name: 歌謡ポップス
   type: CS
   channel: CS6
   serviceId: 329
-  isDisabled: true
-- name: キッズステーション
-  type: CS
-  channel: CS12
-  serviceId: 330
-  isDisabled: true
+  isDisabled: false
 - name: カートゥーン
   type: CS
-  channel: CS22
+  channel: CS6
   serviceId: 331
-  isDisabled: true
-- name: AT-X
-  type: CS
-  channel: CS16
-  serviceId: 333
-  isDisabled: true
-- name: ディズニージュニア
-  type: CS
-  channel: CS8
-  serviceId: 339
-  isDisabled: true
+  isDisabled: false
 - name: ディスカバリー
   type: CS
   channel: CS6
   serviceId: 340
-  isDisabled: true
+  isDisabled: false
 - name: アニマルプラネット
   type: CS
   channel: CS6
   serviceId: 341
-  isDisabled: true
-- name: ヒストリーチャンネル
+  isDisabled: false
+- name: CNNj
   type: CS
-  channel: CS4
-  serviceId: 342
-  isDisabled: true
-- name: ナショジオチャンネル
+  channel: CS6
+  serviceId: 354
+  isDisabled: false
+- name: 囲碁・将棋チャンネル
   type: CS
-  channel: CS16
-  serviceId: 343
+  channel: CS6
+  serviceId: 363
+  isDisabled: false
+- name: ショップチャンネル
+  type: CS
+  channel: CS8
+  serviceId: 55
+  isDisabled: false
+- name: 東映チャンネル
+  type: CS
+  channel: CS8
+  serviceId: 218
+  isDisabled: false
+- name: Mnet
+  type: CS
+  channel: CS8
+  serviceId: 318
   isDisabled: true
 - name: 日テレNEWS24
   type: CS
   channel: CS8
   serviceId: 349
-  isDisabled: true
-- name: TBSニュースバード
+  isDisabled: false
+- name: 衛星劇場
   type: CS
-  channel: CS22
-  serviceId: 351
+  channel: CS10
+  serviceId: 219
   isDisabled: true
-- name: BBCワールド
+- name: KBS World
   type: CS
-  channel: CS16
-  serviceId: 353
-  isDisabled: true
-- name: CNNj
-  type: CS
-  channel: CS6
-  serviceId: 354
-  isDisabled: true
-- name: 囲碁・将棋チャンネル
-  type: CS
-  channel: CS4
-  serviceId: 363
-  isDisabled: true
-- name: スカサカ!
+  channel: CS10
+  serviceId: 317
+  isDisabled: false
+- name: スポーツライブ+
   type: CS
   channel: CS10
   serviceId: 800
-  isDisabled: true
+  isDisabled: false
 - name: スカチャン1
   type: CS
   channel: CS10
   serviceId: 801
   isDisabled: true
-- name: スカチャン2
+- name: GAORA
   type: CS
-  channel: CS10
-  serviceId: 802
-  isDisabled: true
-- name: スカチャン3
+  channel: CS12
+  serviceId: 254
+  isDisabled: false
+- name: エムオン!
   type: CS
-  channel: CS10
-  serviceId: 805
+  channel: CS12
+  serviceId: 325
+  isDisabled: false
+- name: キッズステーション
+  type: CS
+  channel: CS12
+  serviceId: 330
+  isDisabled: false
+- name: ナショジオ
+  type: CS
+  channel: CS12
+  serviceId: 343
+  isDisabled: false
+- name: ザ・シネマ
+  type: CS
+  channel: CS14
+  serviceId: 227
+  isDisabled: false
+- name: ファミリー劇場
+  type: CS
+  channel: CS14
+  serviceId: 293
+  isDisabled: false
+- name: V☆パラダイス
+  type: CS
+  channel: CS14
+  serviceId: 310
+  isDisabled: false
+- name: ヒストリーチャンネル
+  type: CS
+  channel: CS14
+  serviceId: 342
+  isDisabled: false
+- name: SKY STAGE
+  type: CS
+  channel: CS16
+  serviceId: 290
   isDisabled: true
+- name: アクションチャンネル
+  type: CS
+  channel: CS16
+  serviceId: 311
+  isDisabled: false
+- name: ミステリーチャンネル
+  type: CS
+  channel: CS16
+  serviceId: 316
+  isDisabled: false
+- name: MusicJapan
+  type: CS
+  channel: CS16
+  serviceId: 321
+  isDisabled: false
+- name: AT-X
+  type: CS
+  channel: CS16
+  serviceId: 333
+  isDisabled: true
+- name: BBCニュース
+  type: CS
+  channel: CS16
+  serviceId: 353
+  isDisabled: false
+- name: ムービープラス
+  type: CS
+  channel: CS18
+  serviceId: 240
+  isDisabled: false
+- name: ゴルフネットワーク
+  type: CS
+  channel: CS18
+  serviceId: 262
+  isDisabled: true
+- name: チャンネル銀河
+  type: CS
+  channel: CS18
+  serviceId: 305
+  isDisabled: false
+- name: LaLaTV
+  type: CS
+  channel: CS18
+  serviceId: 314
+  isDisabled: false
+- name: フジテレビONE
+  type: CS
+  channel: CS20
+  serviceId: 307
+  isDisabled: false
+- name: フジテレビTWO
+  type: CS
+  channel: CS20
+  serviceId: 308
+  isDisabled: false
+- name: フジテレビNEXT
+  type: CS
+  channel: CS20
+  serviceId: 309
+  isDisabled: true
+- name: スペースシャワーTV
+  type: CS
+  channel: CS20
+  serviceId: 322
+  isDisabled: false
+- name: QVC
+  type: CS
+  channel: CS22
+  serviceId: 161
+  isDisabled: false
+- name: TBSチャンネル2
+  type: CS
+  channel: CS22
+  serviceId: 297
+  isDisabled: false
+- name: Dlife
+  type: CS
+  channel: CS22
+  serviceId: 312
+  isDisabled: false
+- name: TBS NEWS
+  type: CS
+  channel: CS22
+  serviceId: 351
+  isDisabled: false
+- name: 映画・chNECO
+  type: CS
+  channel: CS24
+  serviceId: 223
+  isDisabled: false
+- name: 日テレジータス
+  type: CS
+  channel: CS24
+  serviceId: 257
+  isDisabled: false
+- name: MONDO TV
+  type: CS
+  channel: CS24
+  serviceId: 295
+  isDisabled: false
+- name: 日テレプラス
+  type: CS
+  channel: CS24
+  serviceId: 300
+  isDisabled: false
