@@ -21,9 +21,9 @@ services:
             - mirakc-epg:/var/lib/mirakc/epg
             - ./mirakc/config.yml:/etc/mirakc/config.yml:ro
         environment:
-        TZ: Asia/Tokyo
-        RUST_LOG: info
-    
+            TZ: Asia/Tokyo
+            RUST_LOG: info
+ 
     miraview:
         image: docker.io/mirakc/mirakc:alpine
         container_name: miraview-loader
